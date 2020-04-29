@@ -1,7 +1,7 @@
 import networkx as nx
 from Cities import Cities
 import matplotlib.pyplot as plt
-
+import random
 
 class Graph:
 
@@ -23,6 +23,8 @@ class Graph:
     def build_graph(self):
         self.network = nx.Graph()
         for city in self.cities:
+            print('Random ', city, random.uniform(0,0.4))
+
             self.network.add_node(city)
         edge_map = self.edge_map
         for edge in edge_map:
@@ -33,6 +35,7 @@ class Graph:
 
     def visualize_graph(self):
         nx.draw(self.network, with_labels=True)
+        print(self.network.edges)
         plt.show()
             
         

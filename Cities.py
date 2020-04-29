@@ -2,6 +2,7 @@ import googlemaps
 from geopy.distance import geodesic
 import io
 import pandas as pd
+import random
 
 NUMBER_OF_NEIGHBORS = 3
 
@@ -21,6 +22,7 @@ class Cities:
         excel_data_df = pd.read_excel( 'Idaho Cities.xlsx', sheet_name='Sheet1',  header=None)
         city_coordinates = excel_data_df.to_dict()
         for city in city_coordinates:
+
             self.cities.append(city_coordinates[city][0])
         self.city_cords_dictionary = city_coordinates
 
@@ -30,7 +32,6 @@ class Cities:
 
         cities = self.city_cords_dictionary
         for city in cities:
-
                 city_data = cities[city]
                 name = city_data[0]
                 
@@ -45,7 +46,7 @@ class Cities:
                     other_city_cords = (other_city_long, other_city_lat)
                     city_distance = geodesic(city_cords, other_city_cords).miles
                     temporary_city.update({other_city_name: city_distance})
-                    if (other_city) > int(8):
+                    if (other_city) > int(10):
                         results_dict.update({name : temporary_city})
                         temporary_city = {}
 
