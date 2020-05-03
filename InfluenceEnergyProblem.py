@@ -1,7 +1,7 @@
 from Sentiment import Sentiment
 from Graph import Graph
 
-SENTIMENT_CITIES = ['boise', 'twin_falls', 'meridian', 'nampa', 'sun_valley', 'idaho_falls']
+SENTIMENT_CITIES = ['boise', 'twin_falls', 'meridian', 'nampa', 'sun_valley', 'idaho_falls', 'rexburg', 'coeur_dalene', 'hailey']
 class InfluenceEnergyProblem: 
 
     def __init__(self, to_tokenize):

@@ -4,6 +4,7 @@ import os
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from nltk import sentiment
 from nltk import word_tokenize
+from striprtf.striprtf import rtf_to_text
 
 class Sentiment:
 
@@ -26,15 +27,21 @@ class Sentiment:
         for filename in self.filenames:
             with open('articles/' + self.city_name +'/' + filename, 'r') as file:
                 data = file.read().replace('\n', '')
+                rtf = file.read().replace('\n', '')
+                data = rtf_to_text(rtf)
                 scores = self.sid.polarity_scores(data)
                 article_sentiments[filename] = scores['compound']
         return article_sentiments
 
     def get_sentiment_tokenize(self):
         article_sentiments = {}
+        trip = False
         for filename in self.filenames:
+            if trip:
+                return article_sentiments
             with open('articles/' + self.city_name +'/' + filename, 'r') as file:
-                data = file.read().replace('\n', '')
+                rtf = file.read().replace('\n', '')
+                data = rtf_to_text(rtf)
                 sentences = self.tokenizer.tokenize(data)
                 num_sentences = len(sentences)
                 compound_score = 0
@@ -42,6 +49,7 @@ class Sentiment:
                     scores = self.sid.polarity_scores(sentence)
                     compound_score += scores['compound']
                 article_sentiments[filename] = compound_score/num_sentences
+            
         return article_sentiments
 
                        

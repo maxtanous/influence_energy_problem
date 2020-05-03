@@ -40,5 +40,5 @@ class Graph:
             
         
 
-graph = Graph()
-graph.visualize_graph()
+# graph = Graph()
+# graph.visualize_graph()
