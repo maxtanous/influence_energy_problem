@@ -1,0 +1,14 @@
+Id,Label,timeset,Threshold,Calculated
+0,Boise,,0.2645,true
+1,Sun Valley,,0.2292,true
+2,Meridian,,0.1749,true
+3,Nampa,,0.1678,true
+4,Mccall,,0.308,false
+5,Hailey,,0.2117,true
+6,Ketchum,,0.0618,false
+7,Coeur D'Alene,,0.1786,true
+8,Twin Falls,,0.1609,true
+9,Pocotello,,0.0751,false
+10,Idaho Falls,,0.208,true
+11,Rexburg,,0.169,true
+12,Lewiston,,0.3019,true

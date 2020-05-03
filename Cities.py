@@ -46,7 +46,7 @@ class Cities:
                     other_city_cords = (other_city_long, other_city_lat)
                     city_distance = geodesic(city_cords, other_city_cords).miles
                     temporary_city.update({other_city_name: city_distance})
-                    if (other_city) > int(10):
+                    if (other_city) > int(11):
                         results_dict.update({name : temporary_city})
                         temporary_city = {}
 
